@@ -80,10 +80,12 @@ Wanneer je iets binnen een ${} schrijft, zal het uitgevoerd worden en geconvert 
 
 Niet alle operaters zijn symbolen. Sommige zijn geschreven in worden. Een voorbeeld is de *typeof* operator, die produceerd een string value die de type van die value geeft. 
 
+```javascript
 console.log(typeof 4.5)
 // → number
 console.log(typeof "x")
 // → string
+```
 
 resultaat:
 > number

@@ -95,9 +95,9 @@ Wanneer je iets binnen een ${} schrijft, zal het uitgevoerd worden en geconvert 
 Niet alle operaters zijn symbolen. Sommige zijn geschreven in worden. Een voorbeeld is de *typeof* operator, die produceerd een string value die de type van die value geeft. 
 
 ```javascript
-console.log(typeof 4.5)
+console.log(typeof 4.5);
 // → number
-console.log(typeof "x")
+console.log(typeof "x");
 // → string
 ```
 
@@ -114,20 +114,20 @@ Basicly, yes or no there are no other possibilities. You would only use this if 
 A few ways to produce Boolean values:
 
 ```javascript
-console.log(3 > 2)
+console.log(3 > 2);
 // → true
-console.log(3 < 2)
+console.log(3 < 2);
 // → false
 ```
 Uppercase letters zijn altijd "minder" dan lowercase als het gaat over orderen van strings.
 
 ```javascript
-console.log("Itchy != "Scratchy")
+console.log("Itchy != "Scratchy");
 // → true
-console.log("Apple" == "Orange")
+console.log("Apple" == "Orange");
 // → false
 
-console.log(NaN == NaN)
+console.log(NaN == NaN);
 // → false
 ```
 
@@ -139,7 +139,7 @@ De && operator representeerd *and*. Dit is een binaire operator, de resultaten z
 
 ```javascript
 console.log(true &&
-
+```
 
 
 

@@ -51,7 +51,7 @@ De eerste twee zijn **Infinity** en **-Infinity**, deze stellen de positieve en 
 
 De volgende basic data is de *string*. Een string is eigenlijk dus een stukje tekst. Deze worden op de volgende manier geschreven:
 
-> 'Hello World'
+> 'Hello World' \br
 > "World Hello"
 > `Horld Wello`
 

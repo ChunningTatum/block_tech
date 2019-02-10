@@ -55,13 +55,29 @@ consle.log(ten * ten);
 // → 100
 ```
 
-Wanneer een binding naar een value verwijst , betekent niet dat deze value voor altijd aan deze value vast zit. De = operator kan gebruikt worden op bestaande bindings om zich hier van af te 
+Wanneer een binding naar een value verwijst , betekent niet dat deze value voor altijd aan deze value vast zit. De = operator kan gebruikt worden op bestaande bindings om zich hier van af te disconnecten en een pointen op een nieuwe value. 
 
+```javascript
+let mood = "light";
+console.log(mood);
+// → light
+mood = "dark";
+console.log(mood);
+// → dark
+```
 
+Beeld jezelf in dat bindings tentavels zijn dan een box. Deze bevatten geen values zij *pakken* deze vast zodat twee bindings dezelfde value kunnen aanroepen. Wat je moet onthouden is, je groeit een tentacle om iets vast te houden, aan te groeien of een nieuwe aan maken.
 
+```javascript
+let luigisDebt = 140;
+luigisDebt = luigisDebt - 35;
+console.log(luigisDebt);
+// → 105
+```
 
+Wanneer je een binding defined zonder een value te geven, heeft de tentacle niks om vast te houden. Dus als je de value zonder binding aanvraagt, krijf je de value *undefined*.
 
-
+Een let statement kan meerdere bindings definen, deze defenitie moet deze gesplitst worden door komma's
 
 
 

@@ -1,4 +1,4 @@
-# Sammenvatting week 1
+# Sammenvatting hoofdstuk 1
 
 ## Values, Types, and Operators 
 

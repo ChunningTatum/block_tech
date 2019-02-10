@@ -35,7 +35,7 @@ De simpelste soort statement is een expression met een semicolon er achter. Dit 
 1!;
 !false;
 ```
-
+Deze programma is nutteloos tho... Het kan zijn dat een expression alleen een value produceerd, waarmee deze gebruikt kan worden in de ingesloten code. Een statement staat op zich zelf, het is pas iets als deze statement de "wereld" waar deze in zicht bevind kan veranderen (Iets op het scherm laten zien). Deze veranderingen worden *side effects* genoemd. 
 
 
 

@@ -167,7 +167,7 @@ console.log(false ? 1 : 2);
 ```
 Dit is een conditional operator. De value aan de linkerkant van de vraagteken, pakt welke van de twee values er uit zal komen. Wanneer het true is, zal het de midden value kiezen en wanneer het false is, zal het de rechter value kiezen.
 
-##Empty values
+## Empty values
 
 Er zijn twee speciale values geschreven als **null** en **undefined**, deze worden gebruikt de wanneer er geen betkenis of ontbreking van een value is. Deze zijn opzichzelf al values, maar ze dragen zelf geen informatie. Dingen in JavaScript die geen meaning volle values hebben, geven undefined, omdat deze een value persee moeten hebben. Het verschil tussen indefined en null is per ongeluk gedaan tijden het designen van JavaScript, maar dit maakt voor het grootste gedeelte helemaal niet uit. 
 
@@ -202,7 +202,7 @@ console.log(null == 0);
 ```
 Dit is handig om te zien of bepaalde value echte value heeft inplaats van een null of undefined. Maar soms kan het programma een beetje in de weg zitten door type conversion. Wanneer je type conversion wilt vermijden in dit geval, gebruik dan deze twee operators: === of !==. De eerste test of de value aan beide kanten *exact* hetzelfde is.
 
-##Short cifuiting of logical operators
+## Short cifuiting of logical operators
 
 De logical operators && en || behandele values van verschillende types op verschillende manieren. Zij converteren de value op de linkerkant naar een Boolean type, zodat deze kan bepalen wat er gedaan moet worden. Afhankelijk van de operators en het resultaat van de conversion, zal het de originele linker value geven of de rechter value. 
 
@@ -221,7 +221,7 @@ De && operator werkt bijna hetzelfde maar dan andersom. Wanneer de value aan de 
 
 Wanneer er (true || X) ter sprake is, zal het resultaat altijd true zijn, het maakt niet uit wat X dan in dit geval is, X zal nooit bekeken worden in dit geval. Dit zal ook gelden voor (false && X), dit is false, dus zal X negeren, dit heet *short-circuit evaluation*.
 
-##Summary
+## Summary
 
 We looked at four types of JavaScript values in this chapter: numbers, strings, Booleans, and undefined values.
 

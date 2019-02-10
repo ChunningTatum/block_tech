@@ -53,7 +53,7 @@ De eerste twee zijn **Infinity** en **-Infinity**, deze stellen de positieve en 
 De volgende basic data is de *string*. Een string is eigenlijk dus een stukje tekst. Deze worden op de volgende manier geschreven:
 
 ```javascript
- 'Hello World'\
+ 'Hello World'
  "World Hello"
  `Horld Wello`
 ```
@@ -138,19 +138,91 @@ Er zijn een aantal operations dat bij Boolean values applied kunnen worden. Java
 De && operator representeerd *and*. Dit is een binaire operator, de resultaten zijn alleen waar als beide gegeven values ook kloppen.
 
 ```javascript
-console.log(true &&
+console.log(true && false);
+// → false
+console.log(true && true);
+// → true
+```
+De || operator is een logische *or*. Deze operator geeft true, als een van de gegeven values true is.
+
+```javascript
+console.log(false || true);
+// → true
+console.log(false || false);
+// → false
 ```
 
+*Not* is geschreven als een exclamation mark (!). Dit is een unary operator dat de gegeven value omdraaid. !true produceerd false, en !false geeft true aan.
 
+Wanneer je Boolean operators met elkaar mixt, is het niet altijd voor de hand liggend wanneer er parentheses nodig zijn.
+|| > && ( >, ==) is de volgorde.
 
+De laatste logical operator is een ternary operator die werkt met drie values. 
 
+```javascript
+console.log(true ? 1 : 2);
+// → 1
+console.log(false ? 1 : 2);
+// → 2
+```
+Dit is een conditional operator. De value aan de linkerkant van de vraagteken, pakt welke van de twee values er uit zal komen. Wanneer het true is, zal het de midden value kiezen en wanneer het false is, zal het de rechter value kiezen.
 
+##Empty values
 
+Er zijn twee speciale values geschreven als **null** en **undefined**, deze worden gebruikt de wanneer er geen betkenis of ontbreking van een value is. Deze zijn opzichzelf al values, maar ze dragen zelf geen informatie. Dingen in JavaScript die geen meaning volle values hebben, geven undefined, omdat deze een value persee moeten hebben. Het verschil tussen indefined en null is per ongeluk gedaan tijden het designen van JavaScript, maar dit maakt voor het grootste gedeelte helemaal niet uit. 
 
+## Automatic type conversion
 
+JavaScript vergeeft je vaak voor dingen die je mischien verkeerd geschreven hebt, dit zie je dan in het volgende voorbeeld:
 
+```javascript
+console.log(8 * null);
+// → 0
+console.log("5" - 1);
+// → 4
+console.log("5" + 1);
+// → 51
+console.log("five" * 2);
+// → NaN
+console.log(false == 0);
+// → true
+```
 
+Wanneer een operator "verkeerd" is gebruikt of de "verkeerde" value is gegeven, zal JavaScript deze alsnog uitvoeren in de regels die JavaScript heeft. Dit wordt *type coercion* genoemd. De *null* in de eerste expression veranderd in een 0, en de "5" in de tweede expression wordt een 5 (from string to number). In de derde expression, wordt er door de  + operator de 1 veranderd naar een "1" (from number to string).
 
+Wanneer een value niet naar een nummer convert kan worden in een obvious way (such as "five" or undefined), krijg je een NaN value en deze blijft terug komen. Dus als je deze steeds voorbij ziet komen, heb je waarschijnlijk een fout gemaakt in je expressions.
 
+Wanneer je == trype gebruikt, is de uitkomst vrij makkelijk te voorspellen: je zal dan true krijgen als beide values waar zijn, tenzij er een NaN is. Maar wanneer de types van erlkaar verschillen, doet JavaScript iets erg verwarrend. In de meeste gevallen probeeerd het de values naar andere type values te veranderen.
 
+```javascript
+console.log(null == undefined);
+// → true
+console.log(null == 0);
+// → false
+```
+Dit is handig om te zien of bepaalde value echte value heeft inplaats van een null of undefined. Maar soms kan het programma een beetje in de weg zitten door type conversion. Wanneer je type conversion wilt vermijden in dit geval, gebruik dan deze twee operators: === of !==. De eerste test of de value aan beide kanten *exact* hetzelfde is.
 
+##Short cifuiting of logical operators
+
+De logical operators && en || behandele values van verschillende types op verschillende manieren. Zij converteren de value op de linkerkant naar een Boolean type, zodat deze kan bepalen wat er gedaan moet worden. Afhankelijk van de operators en het resultaat van de conversion, zal het de originele linker value geven of de rechter value. 
+
+De || operator zal altijd de linker value als true geven en de value aan de rechter kan false geven. 
+
+```javascript
+console.log(null || "user")
+// → user
+console.log("Agnes" || "user")
+// → Agnes
+```
+
+Bij het gebruiken van deze functionaliteit, is het een handige manier om terug te vallen op de default value. Als je een value hebt die misschien leeg is, kan je er een || operator achter zetten met een vervangende value. Als de eerste value naar false convert wordt, krijg je een de vervangende value. De regels voor het converten van strings en nummers naar een Boolean geeft altijd een value 0, Nan en een lege string ("") als false terwijl alle andere values tellen als true. Dus (0 || -1) wordt ("" || "!?") waar ("!?") uit komt. 
+
+De && operator werkt bijna hetzelfde maar dan andersom. Wanneer de value aan de linkerkant dat false wordt, zal het ook die value terug geven en wanneer het andersom is geeft deze de rechter value.
+
+Wanneer er (true || X) ter sprake is, zal het resultaat altijd true zijn, het maakt niet uit wat X dan in dit geval is, X zal nooit bekeken worden in dit geval. Dit zal ook gelden voor (false && X), dit is false, dus zal X negeren, dit heet *short-circuit evaluation*.
+
+##Summary
+
+We looked at four types of JavaScript values in this chapter: numbers, strings, Booleans, and undefined values.
+
+Such values are created by typing in their name (true, null) or value (13, "abc"). You can combine and transform values with operators. We saw binary operators for arithmetic (+, -, *, /, and %), string concatenation (+), comparison (==, !=, ===, !==, <, >, <=, >=), and logic (&&, ||), as well as several unary operators (- to negate a number, ! to negate logically, and typeof to find a value’s type) and a ternary operator (?:) to pick one of two values based on a third value.

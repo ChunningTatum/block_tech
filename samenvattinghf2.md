@@ -77,10 +77,27 @@ console.log(luigisDebt);
 
 Wanneer je een binding defined zonder een value te geven, heeft de tentacle niks om vast te houden. Dus als je de value zonder binding aanvraagt, krijf je de value *undefined*.
 
-Een let statement kan meerdere bindings definen, deze defenitie moet deze gesplitst worden door komma's
+Een let statement kan meerdere bindings definen, deze defenitie moet deze gesplitst worden door komma's.
 
+```javascript
+let one = 1, two = 2;
+console.log(one + two);
+// → 3
+```
 
+De worden *var* en *const* kunnen op een dezelfde manieren gebinned worden.
 
+```javascript
+var name = "Ayda";
+const greeting = "Hello ";
+console.log(greeting + name);
+// → Hello Ayda
+```
+De eerste, *var* (variable), is een manier waarbij bindings declared worden in 2015. Het woord *const* staat voor *constant*. Deze defined een constante binding die naar dezelfde value verwijst, zolang deze niet weg gegooid wordt. Deze binding is handig om een naam te geven en dan later makkelijker weer terug te referen.
+
+## Binding names
+
+Binding names kunnen elk woord die je bedenkt zijn. Nummers kunnen een deel zijn van zo'n naam (catch22), maar deze namen mogen niet starten met een cijfers. Deze namen mogen alleen de tekens ($) 
 
 
 

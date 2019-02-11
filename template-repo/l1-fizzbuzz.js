@@ -5,14 +5,14 @@
 
 //(This is actually an interview question that has been claimed to weed out a significant percentage of programmer candidates. So if you solved it, your labor market value just went up.)
 
-for (let number = 1; number <= 100; number = number + 1) {
-  	if(number % 3 == 0 && number % 5 ==0){
-  	console.log("FizzBuzz")
-  } else if(number % 5 ==0){
-    console.log("Buzz")
-  }else if(number % 3 == 0){
+for (let number  = 0; number <= 100; number++){
+  if(number % 3 === 0 && number % 5 === 0){
+    console.log("FizzBuzz");
+  } else if (number % 5 === 0){
+    console.log("Buzz");
+  } else if (number % 3 === 0){
     console.log("Fizz");
-  }else{
-   console.log(number); 
+  } else {
+    console.log(number);
   }
 }
